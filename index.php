@@ -2,5 +2,8 @@
 
 require 'vendor/autoload.php';
 
-$controller = new \app\lib\Router();
+use app\lib\Router;
+
+$controller = new Router();
+$controller->route();
 
