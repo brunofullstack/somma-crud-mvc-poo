@@ -14,5 +14,8 @@
             "app\\": "app/",
             "vendor\\": "vendor/"
         }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7"
     }
 }
