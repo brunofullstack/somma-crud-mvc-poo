@@ -13,7 +13,7 @@ class Router
         $this->index = new IndexController();
     }
 
-    public function route()
+    public function start()
     {
         // Obtém o caminho da URL
         $path = $_SERVER['REQUEST_URI'];
@@ -37,10 +37,13 @@ class Router
                     echo 'Invalid URL';
                 }
                 break;
+            case 'inserir':
+                $this->index->inserir();
+                break;
             case 'deletar':
                 $this->index->deletar();
                 break;
-            case 'inserir':
+            case 'cadastrar':
                 $this->index->inserir();
                 break;
             case 'cliente':
