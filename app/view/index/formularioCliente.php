@@ -1,7 +1,7 @@
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
 
     <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/" class="nav-link" aria-current="page">X Sair</a></li>
+        <li class="nav-item"><a href="/" class="nav-link" aria-current="page">X Fechar</a></li>
     </ul>
 </header>
 <div class="container px-5 my-5">

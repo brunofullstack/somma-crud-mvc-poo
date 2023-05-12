@@ -15,7 +15,6 @@
         <th>razao_social</th>
         <th>email</th>
     </tr>
-    <?php var_dump($clientes); ?>
     <?php foreach ($clientes as $value): ?>
         <tr>
             <td>

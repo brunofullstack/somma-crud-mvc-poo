@@ -78,7 +78,6 @@ class IndexController extends Controller
             }
         } else {
             // $this->view('index/formularioCliente');
-            // $this->slayer();
             require('./app/view/index/formularioCliente.php');
         }
     }
