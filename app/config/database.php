@@ -4,15 +4,15 @@ namespace app\config;
 class database {
 
     private $host = "localhost:3306";
-    private $usuario = "bruno";
-    private $senha = "success";
-    private $db = "mvc";
+    private $usuario = "";
+    private $senha = "";
+    private $db = "";
     private $conn;
 
     public function __construct() {
         try {
             $this->conn = new \PDO("mysql:host=" . $this->host . ";dbname=" . $this->db, $this->usuario, $this->senha);
-        } catch (PDOException $exc) {
+        } catch (\PDOException $exc) {
             echo $exc->getMessage();
         }
     }
