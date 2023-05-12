@@ -5,21 +5,25 @@ namespace app\controller;
 use app\lib\Controller;
 use app\model\clienteModel;
 
-class IndexController extends Controller {
-
+class IndexController extends Controller
+{
     private $model;
 
-    public function __construct($route = null) {
-        $this->model = new clienteModel();   
+    public function __construct($route = null)
+    {
+        $this->model = new clienteModel();
         parent::__construct($route);
     }
 
-    public function listar() {
+    public function listar()
+    {
         $clientes = $this->model->listar();
-        $this->view('index/listar',array('clientes' => $clientes));
+        $this->view('index/listar', array('clientes' => $clientes));
+        // require('./app/view/index/listar.php');
     }
 
-    public function alterar($id) {
+    public function alterar($id)
+    {
         if (isset($id)) {
             $cliente = $this->model->busca($id);
             if ($_POST) {
@@ -35,12 +39,14 @@ class IndexController extends Controller {
                     . "</script>";
                 }
             } else {
-                $this->view('index/formularioCliente',array('cliente' => $cliente));
+                // $this->view('index/formularioCliente', array('cliente' => $cliente));
+                require('./app/view/index/formularioCliente.php');
             }
         }
     }
 
-    public function deletar() {
+    public function deletar()
+    {
         if (isset($_GET['id'])) {
             if ($this->model->deletar($_GET['id'])) {
                 echo "<script>"
@@ -56,7 +62,8 @@ class IndexController extends Controller {
         }
     }
 
-    public function inserir() {
+    public function inserir()
+    {
         if ($_POST) {
             if ($this->model->inserir($_POST)) {
                 echo "<script>"
@@ -70,8 +77,9 @@ class IndexController extends Controller {
                 . "</script>";
             }
         } else {
-            $this->view('index/formularioCliente');
+            // $this->view('index/formularioCliente');
+            // $this->slayer();
+            require('./app/view/index/formularioCliente.php');
         }
     }
-
 }
