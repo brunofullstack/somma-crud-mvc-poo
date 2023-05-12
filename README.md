@@ -5,7 +5,7 @@ Arquitetura: MVC e POO
 
 ### Instação
 
-Executar o comando do composer na pasta do projeto para instalação do autoloader(PSR-4: Autoloader):
+Executar o comando do composer na pasta do projeto para instalação do autoloader(PSR-4: Autoloader) e do php_codesniffer(PSR-12: Extended Coding Style):
 
 ```sh
 $ composer update
