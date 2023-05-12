@@ -1,50 +1,36 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/index/inserir">
-                Novo Cliente
-            </a>
-        </div>
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/cliente">
-                Outro Controller
-            </a>
-        </div>
-    </div>
-</nav>
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <span class="fs-4">Somma-crud-mvc-poo</span>
+    </a>
+
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/cadastrar" class="nav-link active" aria-current="page">Criar novo</a></li>
+    </ul>
+</header>
+
 <table class="table">
     <tr>
         <th>id</th>
-        <th>nome</th>
-        <th>cpf</th>
-        <th>data de nascimento</th>
-        <th>endereço</th>
-        <th>bairro</th>
-        <th>cep</th>
-        <th>cidade</th>
-        <th>estado</th>
-        <th>-</th>
+        <th>cnpj</th>
+        <th>razao_social</th>
+        <th>email</th>
     </tr>
-    <?php foreach ($clientes as $value) : ?>
+    <?php var_dump($clientes); ?>
+    <?php foreach ($clientes as $value): ?>
         <tr>
-            <td><?php echo $value['id']; ?></td>
-            <td><?php echo $value['nome']; ?></td>
-            <td><?php echo $value['cpf']; ?></td>
             <td>
-                <?php
-                $data_nascimento = date_create($value['data_nascimento']);
-                echo date_format($data_nascimento, 'd/m/Y');
-                ?>
+                <?php echo $value['id']; ?>
             </td>
-            <td><?php echo $value['endereco']; ?></td>
-            <td><?php echo $value['bairro']; ?></td>
-            <td><?php echo $value['cep']; ?></td>
-            <td><?php echo $value['cidade']; ?></td>
-            <td><?php echo $value['estado']; ?></td>
             <td>
-                <a href="index/alterar/<?php echo $value['id'] ?>">Alterar</a>
-                <a href="index/deletar/<?php echo $value['id'] ?>">Deletar</a>
+                <?php echo $value['cnpj']; ?>
             </td>
+            <td>
+                <?php echo $value['razao_social']; ?>
+            </td>
+            <td>
+                <?php echo $value['email']; ?>
+            </td>
+            <td>apagar</td>
         </tr>
     <?php endforeach; ?>
 </table>
