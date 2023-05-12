@@ -4,9 +4,9 @@ namespace app\config;
 class database {
 
     private $host = "localhost:3306";
-    private $usuario = "bruno";
-    private $senha = "success";
-    private $db = "mvc";
+    private $usuario = "";
+    private $senha = "";
+    private $db = "";
     private $conn;
 
     public function __construct() {
