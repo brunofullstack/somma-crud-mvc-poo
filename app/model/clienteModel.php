@@ -4,15 +4,17 @@ namespace app\model;
 
 use app\config\database;
 
-class clienteModel {
-
+class clienteModel
+{
     private $conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->conn = new database();
     }
 
-    public function listar($id = null) {
+    public function listar($id = null)
+    {
         $query = "select * from cliente";
         if (isset($id)) {
             $query .= "where id=" . $id;
@@ -20,14 +22,15 @@ class clienteModel {
         return $this->conn->query($query)->fetchAll();
     }
 
-    public function busca($id) {
+    public function busca($id)
+    {
         $query = "select * from cliente";
         $query .= " where id=" . $id;
         return $this->conn->query($query)->fetch();
     }
 
-    public function inserir($cliente) {
-
+    public function inserir($cliente)
+    {
         $query = "insert into cliente ("
                 . "nome_fantasia,"
                 . "cnpj,"
@@ -51,7 +54,8 @@ class clienteModel {
         return $prepare->execute();
     }
 
-    public function alterar($cliente,$id) {
+    public function alterar($cliente, $id)
+    {
 
         $query = "update cliente  "
                 . "set "
@@ -69,11 +73,12 @@ class clienteModel {
         $prepare->bindValue(':razao_social', $cliente['razao_social']);
         $prepare->bindValue(':email', $cliente['email']);
         $prepare->bindValue(':id', $id);
-        
+
         return $prepare->execute();
     }
 
-    public function deletar($id) {
+    public function deletar($id)
+    {
         $query = "delete from cliente where id = :id";
 
         $prepare = $this->conn->prepare($query);
@@ -81,5 +86,4 @@ class clienteModel {
 
         return $prepare->execute();
     }
-
 }
